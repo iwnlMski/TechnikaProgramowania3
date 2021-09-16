@@ -20,8 +20,8 @@ public class MyForm {
     private static int nSkipped;
     public static JFrame frame = new JFrame("App");
     private static int time = 10;
-    private static double dist = 0.1;
-    private static int view_dist = 10;
+    public static double dist = 10;
+    public static int view_dist = 10;
     private static boolean going = false;
     public static MyForm myform;
     public static Runnable engine;
@@ -98,9 +98,9 @@ public class MyForm {
         distancePlusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(dist <= 0.6){
-                    dist = dist + 0.05;
-                    view_dist = view_dist + 5;
+                if(dist <= 29){
+                    dist = dist + 1;
+                    view_dist = view_dist + 1;
                     distValue.setText("Distance = " + view_dist);
                 }
             }
@@ -108,9 +108,9 @@ public class MyForm {
         distanceMinusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(dist >= 0.15){
-                    dist = dist - 0.05;
-                    view_dist = view_dist - 5;
+                if(dist >= 11){
+                    dist = dist - 1;
+                    view_dist = view_dist - 1;
                     distValue.setText("Distance = " + view_dist);
                 }
             }
